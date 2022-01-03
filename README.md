@@ -29,7 +29,7 @@ Our study of the SkillCraft1 dataset led to the implementation of a randomforest
 To run the API once you've downloaded the project,
 
 ```
-$ py app.py runserver
+$ py app.py
 $ explorer http://127.0.0.1:5000/
 ```
 
