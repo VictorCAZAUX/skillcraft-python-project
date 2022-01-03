@@ -30,6 +30,7 @@ To run the API once you've downloaded the project,
 
 ```
 $ py app.py runserver
+$ explorer http://127.0.0.1:5000/
 ```
 
-Then go to the running server: localhost:5000/
+Or alternatively, go to this adress: localhost:5000/
