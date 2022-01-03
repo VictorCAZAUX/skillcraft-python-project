@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+</head>
+<body >
+
+<div class="container">
+<h1>Entrez vos performances StarCraft :</h1>
+    <div class="form-group row">
+        <div class="col-xs-3">
+        <label >APM</label>
+        <input class="form-control" id="APM" type="text" placeholder="Enter APM">
+        
+        </div>
+        <div class="col-xs-3">
+            <label >SelectByHotkeys</label>
+            <input class="form-control" id="SelectByHotkeys" type="text" placeholder="Enter SelectByHotkeys">
+            
+        </div>
+        <div class="col-xs-3">
+            <label >AssignToHotkeys</label>
+            <input class="form-control" id="AssignToHotkeys" type="text" placeholder="Enter AssignToHotkeys">
+          
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xs-3">
+            <label >UniqueHotkeys</label>
+            <input class="form-control" id="UniqueHotkeys" type="text" placeholder="Enter UniqueHotkeys">
+            
+        </div>
+        <div class="col-xs-3">
+            <label >MinimapAttacks</label>
+            <input class="form-control" id="MinimapAttacks" type="text" placeholder="Enter MinimapAttacks">
+           
+        </div>
+        <div class="col-xs-3">
+            <label >MinimapRightClicks</label>
+            <input class="form-control" id="MinimapRightClicks" type="text" placeholder="Enter MinimapRightClicks">
+            
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xs-3">
+            <label >NumberOfPACs</label>
+            <input class="form-control" id="NumberOfPACs" type="text" placeholder="Enter NumberOfPACs">
+            
+        </div>
+        <div class="col-xs-3">
+            <label >TotalMapExplored</label>
+            <input class="form-control" id="TotalMapExplored" type="text" placeholder="Enter TotalMapExplored">
+            
+        </div>
+        <div class="col-xs-3">
+            <label >ActionLatency</label>
+            <input class="form-control" id="ActionLatency" type="text" placeholder="Enter ActionLatency">
+           
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xs-3">
+            <label >ActionsInPAC</label>
+            <input class="form-control" id="ActionsInPAC" type="text" placeholder="Enter ActionsInPAC">
+           
+        </div>
+        <div class="col-xs-3">
+            <label >WorkersMade</label>
+            <input class="form-control" id="WorkersMade" type="text" placeholder="Enter WorkersMade">
+            
+        </div>
+        <div class="col-xs-3">
+            <label >UniqueUnitsMade</label>
+            <input class="form-control" id="UniqueUnitsMade" type="text" placeholder="Enter UniqueUnitsMade">
+            
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xs-3">
+            <label> ComplexUnitsMade</label>
+            <input class="form-control" id="ComplexUnitsMade" type="text" placeholder="Enter ComplexUnitsMade">
+           
+        </div>
+        <div class="col-xs-3">
+            <label >ComplexAbilitiesUsed</label>
+            <input class="form-control" id="ComplexAbilitiesUsed" type="text" placeholder="Enter ComplexAbilitiesUsed">
+   
+        </div>
+        <div class="col-xs-3">
+            <label >GapBetweenPACs</label>
+            <input class="form-control" id="GapBetweenPACs" type="text" placeholder="Enter GapBetweenPACs">
+        
+        </div>
+    </div>
+
+    <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" onclick="getLeague(this)">Predire League</a>
+    </div>
+</div>
+</body>
+<script language="JavaScript">
+    function getLeague(source){
+        var APM = document.getElementById('APM').value;
+        var SelectByHotkeys = document.getElementById('SelectByHotkeys').value;
+        var AssignToHotkeys = document.getElementById('AssignToHotkeys').value;
+        var UniqueHotkeys = document.getElementById('UniqueHotkeys').value;
+        var MinimapAttacks = document.getElementById('MinimapAttacks').value;
+        var MinimapRightClicks = document.getElementById('MinimapRightClicks').value;
+        var NumberOfPACs = document.getElementById('NumberOfPACs').value;
+        var ActionLatency = document.getElementById('ActionLatency').value;
+        var ActionsInPAC = document.getElementById('ActionsInPAC').value;
+        var TotalMapExplored = document.getElementById('TotalMapExplored').value;
+        var WorkersMade = document.getElementById('WorkersMade').value;
+        var UniqueUnitsMade = document.getElementById('UniqueUnitsMade').value;
+        var ComplexUnitsMade = document.getElementById('ComplexUnitsMade').value;
+        var ComplexAbilitiesUsed = document.getElementById('ComplexAbilitiesUsed').value;
+        var GapBetweenPACs = document.getElementById('GapBetweenPACs').value;
+        
+        window.location.href = '/api/?apm='+APM+'&selectbyhotkeys='+SelectByHotkeys
+        +'&assigntohotkeys='+AssignToHotkeys+'&uniquehotkeys='+UniqueHotkeys
+        +'&minimapattacks='+MinimapAttacks+'&minimaprightclicks='+MinimapRightClicks
+        +'&numberofpacs='+NumberOfPACs+'&gapbetweenpacs='+GapBetweenPACs
+        +'&actionlatency='+ActionLatency+'&actionsinpac='+ActionsInPAC
+        +'&totalmapexplored='+TotalMapExplored+'&workersmade='+WorkersMade
+        +'&uniqueunitsmade='+UniqueUnitsMade+'&complexunitsmade='+ComplexUnitsMade
+        +'&complexabilitiesused='+ComplexAbilitiesUsed; 
+
+    }
+</script>
+</html>
