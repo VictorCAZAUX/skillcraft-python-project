@@ -1,9 +1,7 @@
 from flask import Flask,request, render_template
-import numpy as np
 import pickle
 from threading import Timer
 import webbrowser
-from sklearn import preprocessing
 
 app= Flask(__name__)
 
