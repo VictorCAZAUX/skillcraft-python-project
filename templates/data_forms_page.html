@@ -1,0 +1,39 @@
+
+<html>
+
+
+<body>
+    <div class="login" id="global">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/mainpage.css') }}">
+        <h1 class="title">Enter the player attributes values</h1>
+        <form action="/" method="POST">
+            <div><input type="text" name="Age" placeholder="Age" required="required" /></div>
+            <div><input type="text" name="HoursPerWeek" placeholder="Hours Per Week" required="required" /></div>
+            <div><input type="text" name="TotalHours" placeholder="Total Hours" required="required" /></div>
+            <div><input type="text" name="APM" placeholder="APM" required="required" /></div>
+            <div><input type="text" name="SelectByHotkeys" placeholder="Select By Hotkeys" required="required" /></div>
+            <div><input type="text" name="AssignToHotkeys" placeholder="Assign To Hotkeys" required="required" /></div>
+            <div><input type="text" name="UniqueHotkeys" placeholder="Unique Hotkeys" required="required" /></div>
+            <div><input type="text" name="MinimapAttacks" placeholder="Minimap Attacks" required="required" /></div>
+            <div><input type="text" name="MinimapRightClicks" placeholder="Minimap Right Clicks" required="required" /></div>
+            <div><input type="text" name="NumberOfPACs" placeholder="Number Of PACs" required="required" /></div>
+            <div><input type="text" name="GapBetweenPACs" placeholder="Gap Between PACs" required="required" /></div>
+            <div><input type="text" name="ActionLatency" placeholder="Action Latency" required="required" /></div>
+            <div><input type="text" name="ActionsInPAC" placeholder="Actions In PAC" required="required" /></div>
+            <div><input type="text" name="TotalMapExplored" placeholder="Total Map Explored" required="required" /></div>
+            <div><input type="text" name="WorkersMade" placeholder="Workers Made" required="required" /></div>
+            <div><input type="text" name="UniqueUnitsMade" placeholder="Unique Units Made" required="required" /></div>
+            <div><input type="text" name="ComplexUnitsMade" placeholder="Complex Units Made" required="required" /></div>
+            <div><input type="text" name="ComplexAbilitiesUsed" placeholder="Complex Abilities Used" required="required" /></div>
+            <div><button type="submit" class="button">Predict</button></div>
+        </form>
+
+        <br>
+        <br>
+        {{ prediction_text }}
+
+    </div>
+
+</body>
+
+</html>

@@ -32,4 +32,4 @@ To run the API once you've downloaded the project,
 $ py app.py
 ```
 
-A web page on your default browser should open with the flask app. If not, go to this adress: localhost:5000/
+A web page on your default browser should open with the flask app. If not, go to this adress: localhost:5551/
