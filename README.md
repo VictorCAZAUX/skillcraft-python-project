@@ -3,7 +3,7 @@
 ## Starcraft II: Wings of Liberty
 
 It is a multiplayer, strategy video game. It was released in 2010.
-Online players are distributed into 7 leagues according to their level.
+Online players are distributed into 7 leagues according to their level. 
 
 ## The Dataset
 
@@ -13,7 +13,7 @@ Online players are distributed into 7 leagues according to their level.
 
 ### Collection of Data:
 - Telemetry from 3 340 players of 7 leagues contacted through social media and online gaming communities
-- Replays of 35 professional players found on gaming websites
+- Replays of 55 professional players found on gaming websites
 
 ## Problem: League Prediction
 ### Why?
@@ -29,9 +29,7 @@ Our study of the SkillCraft1 dataset led to the implementation of a randomforest
 To run the API once you've downloaded the project,
 
 ```
-$ cd StarCraft_data_Analysis-main/skc_web
-$ pip install -r requirements.txt
-$ py manage.py runserver
+$ py app.py runserver
 ```
 
-Then go to the running server: http://127.0.0.1:8000/
+Then go to the running server: localhost:5000/
