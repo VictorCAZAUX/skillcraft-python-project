@@ -2,6 +2,8 @@ from flask import Flask,request, render_template
 import pickle
 from threading import Timer
 import webbrowser
+from sklearn import preprocessing
+import pandas as pd
 
 app= Flask(__name__)
 
@@ -22,8 +24,24 @@ def predict():
     final_features = [[float(x) for x in request.form.values()]]
     
     #We need to normalize the data now
-    scaler = pickle.load(open('scaler.pkl', 'rb'))
-    data_norm = scaler.transform(final_features)
+    try:
+        scaler = pickle.load(open('scaler.pkl', 'rb'))
+        data_norm = scaler.transform(final_features)
+    except:
+        df = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/00272/SkillCraft1_Dataset.csv")
+
+        df.Age = df.Age.replace("?", df[df.Age != '?'].Age.median())
+
+        df.HoursPerWeek = df.HoursPerWeek.replace("?", df[df.HoursPerWeek != '?'][df.LeagueIndex == 7].HoursPerWeek.median())
+
+        df.TotalHours = df.TotalHours.replace("?", df[df.TotalHours != '?'][df.LeagueIndex == 7].TotalHours.median())
+
+        df[['Age', 'HoursPerWeek', 'TotalHours']] = df[['Age', 'HoursPerWeek', 'TotalHours']].astype(int)
+
+        scaler = preprocessing.MinMaxScaler()
+        scaler.fit_transform(df)
+        data_norm = scaler.transform(final_features)
+    
     
     #Load the model and predict
     pred_model = pickle.load(open('final_model.pickle', 'rb'))
