@@ -29,7 +29,6 @@ def predict():
         data_norm = scaler.transform(final_features)
     except:
         df = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/00272/SkillCraft1_Dataset.csv")
-
         df.Age = df.Age.replace("?", df[df.Age != '?'].Age.median())
 
         df.HoursPerWeek = df.HoursPerWeek.replace("?", df[df.HoursPerWeek != '?'][df.LeagueIndex == 7].HoursPerWeek.median())
@@ -38,6 +37,7 @@ def predict():
 
         df[['Age', 'HoursPerWeek', 'TotalHours']] = df[['Age', 'HoursPerWeek', 'TotalHours']].astype(int)
 
+        df.drop(df.columns[[0, 1]], axis=1, inplace=True)
         scaler = preprocessing.MinMaxScaler()
         scaler.fit_transform(df)
         data_norm = scaler.transform(final_features)
