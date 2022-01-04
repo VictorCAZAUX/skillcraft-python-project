@@ -29,6 +29,7 @@ Our study of the SkillCraft1 dataset led to the implementation of a randomforest
 To run the API once you've downloaded the project,
 
 ```
+$ pip install -r requirements.txt
 $ py app.py
 ```
 
