@@ -26,7 +26,8 @@ Our study of the SkillCraft1 dataset led to the implementation of a randomforest
 
 ## Running the API
 
-To run the API once you've downloaded the project,
+The API works for python 2.6 to 3.0 included. 
+To run the API once you've downloaded the project, type in cmd
 
 ```
 $ pip install -r requirements.txt
